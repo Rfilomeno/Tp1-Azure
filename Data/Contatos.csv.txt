@@ -1,0 +1,4 @@
+Leonardo,Nascimento,11999990000,leonardonascimento@exemplo.com
+Rodrigo,Filomeno,21987536007,rodrigo.filomeno@al.infnet.edu.br
+Filipe,Vasconcelos,21654987654,filipe.vasconcelos@al.infnet.edu.br
+Claudio,Filomeno,21321654987,claudio@bla.com.br
