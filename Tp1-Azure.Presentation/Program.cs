@@ -26,7 +26,7 @@ namespace Tp1_Azure.Presentation
             foreach (var contatoNaoFormatado in contatosCsv)
             {
                 var dados = contatoNaoFormatado.Split(',');
-                Contato contato = new Contato(dados[0], dados[1], Convert.ToInt32(dados[2]), dados[3]);
+                Contato contato = new Contato(dados[0], dados[1], dados[2], dados[3]);
 
                 contatos.Add(contato);
             }
@@ -38,9 +38,11 @@ namespace Tp1_Azure.Presentation
             CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 
             // Retrieve a reference to the table.
-            CloudTable table = tableClient.GetTableReference("contato");
+            CloudTable table = tableClient.GetTableReference("RodrigoFilomeno");
 
-            // Create the table if it doesn't exist.
+            //table.DeleteIfExists();
+
+            //Create the table if it doesn't exist.
             table.CreateIfNotExists();
 
             foreach (var contato in contatos)
@@ -51,8 +53,8 @@ namespace Tp1_Azure.Presentation
 
             foreach (var contato in contatos)
             {
-                Console.WriteLine("{0} {1}",contato.Nome, contato.Sobrenome);
-                Console.WriteLine(contato.Telefone);
+                Console.WriteLine("{0} {1}",contato.Nome, contato.PartitionKey);
+                Console.WriteLine(contato.RowKey);
                 Console.WriteLine(contato.Email);
                 Console.WriteLine("-----------------------------------------");
             }
