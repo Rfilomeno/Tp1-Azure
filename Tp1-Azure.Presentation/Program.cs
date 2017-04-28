@@ -17,6 +17,7 @@ namespace Tp1_Azure.Presentation
         static void Main(string[] args)
         {
             Console.Write("Escreva o caminho (path) do arquivo csv: ");
+            Console.ReadLine();
             //var pathCsv = Console.ReadLine();
             var pathCsv = @"C:\workspace\Tp1-Azure\Data\Contatos.csv";
             IList<Contato> contatos = new List<Contato>();
@@ -32,9 +33,13 @@ namespace Tp1_Azure.Presentation
                 contatos.Add(contato);
             }
 
-            //CriandoTabelaNoStorage(contatos);
+            CriandoTabelaNoStorage(contatos);
 
-            //CriandoBlobNoStorage(pathCsv);
+            CriandoBlobNoStorage(pathCsv);
+
+            //DerrubandoTabelaNoStorage();
+
+            //DerrubandoBlobNoStorage();
 
             foreach (var contato in contatos)
             {
@@ -45,6 +50,42 @@ namespace Tp1_Azure.Presentation
             }
             Console.ReadKey();
 
+        }
+
+        private static void DerrubandoBlobNoStorage()
+        {
+            // Retrieve storage account from connection string.
+            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+                CloudConfigurationManager.GetSetting("StorageConnectionString"));
+
+            // Create the blob client.
+            CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+
+            // Retrieve reference to a previously created container.
+            CloudBlobContainer container = blobClient.GetContainerReference("rodrigofilomeno");
+
+            container.DeleteIfExists();
+
+            //// Retrieve reference to a blob named "myblob.txt".
+            //CloudBlockBlob blockBlob = container.GetBlockBlobReference("contato.csv");
+
+            //// Delete the blob.
+            //blockBlob.Delete();
+        }
+
+        private static void DerrubandoTabelaNoStorage()
+        {
+            // Retrieve the storage account from the connection string.
+            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+                CloudConfigurationManager.GetSetting("StorageConnectionString"));
+
+            // Create the table client.
+            CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
+
+            // Retrieve a reference to the table.
+            CloudTable table = tableClient.GetTableReference("RodrigoFilomeno");
+
+            table.DeleteIfExists();
         }
 
         private static void CriandoBlobNoStorage(string pathCsv)
