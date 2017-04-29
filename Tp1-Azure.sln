@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26403.3
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Presentation", "1-Presentation", "{9534FDBE-078B-41D5-962B-09DDD9EBC7A6}"
 EndProject
@@ -13,7 +13,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tp1-Azure.Presentation", "T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tp1-Azure.Domain", "Tp1-Azure.Domain\Tp1-Azure.Domain.csproj", "{6BD21055-46C1-44E5-AC56-7711285859A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tp1-Azure.Infra", "Tp1-Azure.Infra\Tp1-Azure.Infra.csproj", "{143DD76B-7A27-431C-A304-5651CC277429}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1-Data", "5.1-Data", "{FC5BC404-2CA3-42D6-882F-CC9EDF85F47F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tp1-Azure.Data", "Tp1-Azure.Data\Tp1-Azure.Data.csproj", "{14DBF5B2-6A32-42BD-9337-1EBC8ED1F3AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resposta", "Resposta", "{0A69910C-B34F-41B2-A53F-5B494ED4C4C8}"
+	ProjectSection(SolutionItems) = preProject
+		RespostaTP1.txt = RespostaTP1.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +36,10 @@ Global
 		{6BD21055-46C1-44E5-AC56-7711285859A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BD21055-46C1-44E5-AC56-7711285859A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BD21055-46C1-44E5-AC56-7711285859A3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{143DD76B-7A27-431C-A304-5651CC277429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{143DD76B-7A27-431C-A304-5651CC277429}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{143DD76B-7A27-431C-A304-5651CC277429}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{143DD76B-7A27-431C-A304-5651CC277429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14DBF5B2-6A32-42BD-9337-1EBC8ED1F3AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14DBF5B2-6A32-42BD-9337-1EBC8ED1F3AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14DBF5B2-6A32-42BD-9337-1EBC8ED1F3AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14DBF5B2-6A32-42BD-9337-1EBC8ED1F3AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -40,6 +47,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{6532C222-D26E-4227-9715-E1CC1F68B5A1} = {9534FDBE-078B-41D5-962B-09DDD9EBC7A6}
 		{6BD21055-46C1-44E5-AC56-7711285859A3} = {684AFE32-4A07-4936-B02D-991ABB970431}
-		{143DD76B-7A27-431C-A304-5651CC277429} = {EE8A2C78-2DD7-4B04-9CB3-D131AACBB112}
+		{FC5BC404-2CA3-42D6-882F-CC9EDF85F47F} = {EE8A2C78-2DD7-4B04-9CB3-D131AACBB112}
+		{14DBF5B2-6A32-42BD-9337-1EBC8ED1F3AC} = {FC5BC404-2CA3-42D6-882F-CC9EDF85F47F}
 	EndGlobalSection
 EndGlobal

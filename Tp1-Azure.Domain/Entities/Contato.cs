@@ -1,13 +1,8 @@
 ﻿using Microsoft.WindowsAzure.Storage.Table;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace Tp1_Azure.Domain.Entities
-    {
+{
     public class Contato : TableEntity
     {
         public Contato(string nome, string sobrenome, string telefone, string email)
