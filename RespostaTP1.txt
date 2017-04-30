@@ -1,0 +1,13 @@
+Tp1 de Azure
+Aluno: Rodrigo Filomeno
+
+
+Podemos classsificar como PaaS os seguintes serviços:
+Exemplos: Serviço de aplicativo e Visual Studio Team Services
+Pois esses serviços servem um ambiente para desenvolvimento, teste, fornecimento e gerenciamento de aplicativos de software.
+
+
+Podemos classsificar como IaaS os seguintes serviços:
+Exemplos: Tables, BlobStorage e Virtual Machines.
+Pois esses serviços somente servem infraestrutura computacional, onde o usuário do servico nao precisa se preocupar com infraestrutura,
+preocupando-se somente com o software e o gerenciamento da infraestrutura que utilizará.
