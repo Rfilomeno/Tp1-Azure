@@ -14,28 +14,23 @@ namespace Tp1_Azure.Presentation
 
         private static void Inicia()
         {
-            Console.Write("Escreva o caminho (path) do arquivo csv: ");
-            Console.ReadLine();
-            var path = Console.ReadLine();
-            //var path = @"C:\workspace\Tp1-Azure\Data\Contatos.Csv";
+            string path = string.Empty;
+            var CsvLido = AbrirArquivoHelper.Executa(out path);
 
-            LeitorCsv leitor = new LeitorCsv();
-
-            var CsvLido = leitor.Ler(path);
 
             var contatos = ContatosHelper.CriaContatos(CsvLido);
 
 
             ContatoTableStorageDao tableDao = new ContatoTableStorageDao();
-            tableDao.Adiciona(contatos);
+            //tableDao.Adiciona(contatos);
 
             ContatoBlobStorageDao BlobDao = new ContatoBlobStorageDao();
-            BlobDao.AddBlob(path);
+            //BlobDao.AddBlob(path);
 
 
-            //tableDao.ApagaTabela();
+            tableDao.ApagaTabela();
             //BlobDao.DeleteBlob();
-            //BlobDao.DeleteContainer();
+            BlobDao.DeleteContainer();
 
             Console.ReadKey();
         }

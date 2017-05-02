@@ -9,6 +9,7 @@ namespace Tp1_Azure.Data
     {
         public void AddBlob(string path)
         {
+            Console.WriteLine("Armazenado blob no Storage aguarde...");
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
                 CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
@@ -45,14 +46,23 @@ namespace Tp1_Azure.Data
 
 
             CloudBlockBlob blockBlob = container.GetBlockBlobReference(nomeDoArquivo);
+            if(blockBlob != null)
+            {
+                blockBlob.DeleteIfExists();
+                Console.WriteLine("Arquivo apagado no Storage com sucesso!");
 
-            blockBlob.DeleteIfExists();
-            Console.WriteLine("Arquivo apagado no Storage com sucesso!");
+            }
+            else
+            {
+                Console.WriteLine("Arquivo não encontrado!");
+            }
 
         }
 
         public void DeleteContainer()
         {
+            Console.WriteLine("Apagando Container no Storage aguarde...");
+
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
                 CloudConfigurationManager.GetSetting("StorageConnectionString"));
 

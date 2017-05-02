@@ -14,6 +14,7 @@ namespace Tp1_Azure.Data
     {
         public void Adiciona(IList<Contato> contatos)
         {
+            Console.WriteLine("Armazenando Dados na Tabela do storage aguarde...");
 
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
                 CloudConfigurationManager.GetSetting("StorageConnectionString"));
@@ -34,6 +35,8 @@ namespace Tp1_Azure.Data
 
         public void ApagaTabela()
         {
+            Console.WriteLine("Apagando Tabela aguarde ...");
+
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
                 CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
